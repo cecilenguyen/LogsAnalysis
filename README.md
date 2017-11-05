@@ -17,7 +17,7 @@ Installation instructions can be found on their respective sites.
 - [Python 3.6.3](https://www.python.org/downloads/) or later
 - [Git](https://git-scm.com/downloads)
 - [Vagrant](https://www.vagrantup.com)
-- [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)s
+- [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_1)
 
 ## Quick Start
 
@@ -49,32 +49,33 @@ To explore the tables in the news database, run `psql -d news` and you will be a
 
 The news database contains 3 tables with the following schemas: 
 ### Articles
- Column |           Type             
---------+--------------------------
- author | integer                  
- title  | text                     
- slug   | text                     
- lead   | text                     
- body   | text                     
- time   | timestamp with time zone 
- id     | integer      
+
+| Column |           Type           |
+|--------|--------------------------|
+| author | integer                  |
+| title  | text                     |
+| slug   | text                     |
+| lead   | text                     |
+| body   | text                     |
+| time   | timestamp with time zone |
+| id     | integer                  |
 
 ### Authors
- Column |  Type                        
---------+---------
- name   | text    
- bio    | text    
- id     | integer
+| Column |  Type   |                 
+|--------|---------|
+| name   | text    |
+| bio    | text    |
+| id     | integer |
 
 ### Log
- Column |           Type                             
---------+--------------------------
- path   | text                      
- ip     | inet                      
- method | text                      
- status | text                      
- time   | timestamp with time zone 
- id     | integer
+| Column |           Type           |         
+|--------|--------------------------|
+| path   | text                     |
+| ip     | inet                     | 
+| method | text                     | 
+| status | text                     | 
+| time   | timestamp with time zone | 
+| id     | integer                  |
 
 ## Copyright and License
 
