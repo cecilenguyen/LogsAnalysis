@@ -33,7 +33,6 @@ You should see all the following files:
 - README.md
 - news.py
 - news_output.txt
-- newsdata.sql
 
 **Environment set up**
 Start Vagrant VM by running the command `vagrant up` and then log in using `vagrant ssh`

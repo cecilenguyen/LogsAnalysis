@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import psycopg2
 
 # set name of database to connect to
@@ -18,18 +19,18 @@ def get_query(query):
 # format printing of queries 1 and 2
 def print_query(result):
     for col in result:
-        print(str(col[0]) + ' - ' + str(col[1]) + ' views')
+        print("{} - {} views".format(col[0], col[1]))
 
 
 # format printing of query 3
 def print_err_query(result):
     for col in result:
-        print(str(col[0]) + ' - ' + str(col[1]) + '%')
+        print("{} - {} %".format(col[0], col[1]))
 
 
 # SQL query for most popular three articles of all time
 query1 = '''select articles.title, count(*) as num
-    from articles join log on log.path like concat('%',articles.slug)
+    from articles join log on log.path = concat('/article/', articles.slug)
     group by articles.title, log.path
     order by num desc
     limit 3;'''
@@ -38,7 +39,7 @@ query1 = '''select articles.title, count(*) as num
 query2 = '''select authors.name, count(*) as num
     from articles join authors
     on articles.author = authors.id
-    join log on log.path like concat('%', articles.slug)
+    join log on log.path = concat('/article/', articles.slug)
     group by authors.name
     order by num desc;'''
 
